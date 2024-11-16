@@ -43,36 +43,37 @@ spring:
   main:
     allow-circular-references: true
 
-#application:
-#  jwt:
-#    secretKey: securesecuresecuresecuresecuresecuresecuresecuresecuresecuresecure
-#    tokenPrefix: Bearer
-#    tokenExpirationAfterMillis: 604800000       #86400000,3600000,60,000  Token is issued for a week, has to change once go live
-#  refresh:
-#    tokenExpirationAfterMillis: 120000
-#  status:
-#    active: A
-#    inactive: I
-#  resource:
-#    users: users
-#    roles: roles
-#    resources: resources
-#    userRoles: userRoles
-#    permissions: permissions
-#    buses: buses
-#    busOwners: busOwners
-#    transportAuthorities: transportAuthorities
-#    devices: devices
-#    deviceModels: deviceModels
-#    districts: districts
-#    locations: locations
-#    serviceTypes: serviceTypes
-#    routes: routes
-#    fareTypes: fareTypes
-#
-#rsa:
-#  private-key: classpath:certs/private.pem
-#  public-key: classpath:certs/public.pem
+application:
+ jwt:
+   secretKey: securesecuresecuresecuresecuresecuresecuresecuresecuresecuresecure
+   tokenPrefix: Bearer
+   tokenExpirationAfterMillis: 604800000       #86400000,3600000,60,000  Token is issued for a week, has to change once go live
+ refresh:
+   tokenExpirationAfterMillis: 120000
+ status:
+   active: A
+   inactive: I
+ resource:
+   message: hello, department service
+   users: users
+   roles: roles
+   resources: resources
+   userRoles: userRoles
+   permissions: permissions
+   buses: buses
+   busOwners: busOwners
+   transportAuthorities: transportAuthorities
+   devices: devices
+   deviceModels: deviceModels
+   districts: districts
+   locations: locations
+   serviceTypes: serviceTypes
+   routes: routes
+   fareTypes: fareTypes
+
+rsa:
+ private-key: classpath:certs/private.pem
+ public-key: classpath:certs/public.pem
 
 
 springdoc:
