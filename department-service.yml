@@ -54,7 +54,7 @@ application:
    active: A
    inactive: I
  resource:
-   message: hello, department service good work
+   message: hello, department service good work baby
    users: users
    roles: roles
    resources: resources
