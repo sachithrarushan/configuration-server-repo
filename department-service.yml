@@ -1,1 +1,85 @@
+server:
+  port: 8070
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+
+spring:
+  # application:
+  #   name: department-service
+  #profiles:
+  #  active: dev
+  sql:
+    init:
+      mode: always # this is to run liquibase on every startup.
+  messages:
+    basename: messages
+    encoding: UTF-8
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        jdbc:
+          batch_size: 50
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+    defer-datasource-initialization: true # this is to defer datasource initialization until after liquibase has run.
+  datasource:
+    url: jdbc:mysql://localhost:3306/department_db?createDatabaseIfNotExist=true
+    username: root
+    password: 0718776905Sac
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  main:
+    allow-circular-references: true
+
+#application:
+#  jwt:
+#    secretKey: securesecuresecuresecuresecuresecuresecuresecuresecuresecuresecure
+#    tokenPrefix: Bearer
+#    tokenExpirationAfterMillis: 604800000       #86400000,3600000,60,000  Token is issued for a week, has to change once go live
+#  refresh:
+#    tokenExpirationAfterMillis: 120000
+#  status:
+#    active: A
+#    inactive: I
+#  resource:
+#    users: users
+#    roles: roles
+#    resources: resources
+#    userRoles: userRoles
+#    permissions: permissions
+#    buses: buses
+#    busOwners: busOwners
+#    transportAuthorities: transportAuthorities
+#    devices: devices
+#    deviceModels: deviceModels
+#    districts: districts
+#    locations: locations
+#    serviceTypes: serviceTypes
+#    routes: routes
+#    fareTypes: fareTypes
+#
+#rsa:
+#  private-key: classpath:certs/private.pem
+#  public-key: classpath:certs/public.pem
+
+
+springdoc:
+  api-docs:
+    path: /swagger-doc
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    default-models-expand-depth: -1  # this is to remove unwanted tables view in swagger-ui
 
